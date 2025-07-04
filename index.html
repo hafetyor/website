@@ -3,40 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Flipbook - Martini Food</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
   <script src="turn.min.js"></script>
-  <style>
-    body {
-      background: #f0f0f0;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+ <style>
+  body {
+    background: #f0f0f0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
-    #flipbook {
-      width: 800px;
-      height: 500px;
-      position: relative;
-    }
+  #flipbook {
+    width: 800px;
+    height: 500px;
+    position: relative;
+  }
 
-    .page {
-      width: 400px;
-      height: 500px;
-      background: white;
-      border: 1px solid #ccc;
-      overflow: hidden;
-    }
+  #flipbook .page {
+    width: 400px;
+    height: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
 
-    img.page-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  </style>
+  #flipbook .page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
 </head>
 <body>
 
@@ -63,5 +64,16 @@
   });
 </script>
 
+<script>
+  $(document).ready(function () {
+    $('#flipbook').turn({
+      width: 800,
+      height: 500,
+      autoCenter: true,
+      elevation: 50,
+      gradients: true
+    });
+  });
+</script>
 </body>
 </html>
